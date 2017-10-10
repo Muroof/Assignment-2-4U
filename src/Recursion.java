@@ -22,7 +22,6 @@ public class Recursion {
             // keep doing this until you have a single digit number
             return digitalSum(left) + digitalSum(right);
         }
-
     }
 
     // QUESTION TWO
@@ -42,15 +41,15 @@ public class Recursion {
     }
 
     // QUESTION THREE 
-    public int digitalTriangle(int row) {
+    public int digitalTriangle(int n) {
         // base case
-        if (row <= 1) {
-            return row;
+        if (n <= 1) {
+            return n;
         } else {
             // previous row entered subtract one
-            int previousRow = row - 1;
+            int previousRow = n - 1;
             // blocks = row + previous row
-            int blocks = row + digitalTriangle(previousRow);
+            int blocks = n + digitalTriangle(previousRow);
             // return blocks
             return blocks;
         }
@@ -80,14 +79,14 @@ public class Recursion {
     }
 
     // QUESTION FIVE
-    public void binaryConvert(int decimal) {
+    public void binaryConvert(int n) {
         // BASE CASE
-        if (decimal == 0) {
+        if (n == 0) {
         } else {
             // divide the decimal by 2
-            binaryConvert(decimal / 2);
+            binaryConvert(n / 2);
             // if the remainder is zero
-            if (decimal % 2 == 0) {
+            if (n % 2 == 0) {
                 // print zero
                 System.out.print("0");
             } else {
@@ -100,7 +99,7 @@ public class Recursion {
     }
 
     // QUESTION SIX
-    public void Convert(int n, int b) {
+    public void convert(int n, int b) {
         // BASE CASE
         if (n == 0) {
         } else {
@@ -109,7 +108,7 @@ public class Recursion {
             // n = n divide by b
             n = n / b;
             // run through method
-            Convert(n, b);
+            convert(n, b);
             // if remainder is single digit output the number
             if (remainder < 10) {
                 System.out.print(remainder);
